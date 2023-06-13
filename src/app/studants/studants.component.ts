@@ -13,9 +13,8 @@ import { Router } from '@angular/router';
 })
 export class StudantsComponent implements OnInit {
   Studants: Studant[] = [];
-  constructor(private StudantService: StudantService, private router : Router) {
-
-  }
+  isEditing: boolean = false;
+  constructor(private StudantService: StudantService, private router: Router) {}
 
   ngOnInit(): void {
     this.loadStudants();
@@ -25,18 +24,19 @@ export class StudantsComponent implements OnInit {
       next: (data) => (this.Studants = data),
     });
   }
-  edit(client : Studant){
-    this.router.navigate(['studantDetails', client.id])
+  edit(client: Studant) {
+    this.router.navigate(['studantDetails', client.id]);
   }
 
-  delete(Studant : Studant){
+  delete(Studant: Studant) {
     this.StudantService.delete(Studant).subscribe({
-      next: () => this.loadStudants()
-    })
+      next: () => this.loadStudants(),
+    });
   }
-
-  create(){
+  onCleanEvent() {
+    this.isEditing = false;
+  }
+  create() {
     this.router.navigate(['createStudant']);
   }
-
 }

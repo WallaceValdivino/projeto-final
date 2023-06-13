@@ -88,10 +88,10 @@ export class StudantFormComponent implements OnInit {
       }
     }}
 
-    cancel() {
-  this.router.navigate(['studants']);
-    }
 
+    cancel() {
+      this.router.navigate(['studants']);
+        }
     get name(): any {
       return this.formGroupStudant.get('name');
     }
