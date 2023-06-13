@@ -1,0 +1,28 @@
+<div class="bg-dark mt-5 container rounded-4 p-5">
+  <app-teacher-form [Teacher]="Teacher" (saveEvent)="onSaveEvent($event)" (cleanEvent)="onCleanEvent()"></app-teacher-form>
+  <table class="table table-dark mt-3">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Email</th>
+        <th scope="col">CPF</th>
+        <th scope="col">Endereço</th>
+        <th scope="col">Opções</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let teacher of Teachers">
+        <th scope="row">{{teacher.id}}</th>
+        <td>{{teacher.name}}</td>
+        <td>{{teacher.email}}</td>
+        <td>{{teacher.cpf}}</td>
+        <td>{{teacher.location}}</td>
+        <td>
+          <button class="btn btn-warning me-2" (click)="edit(teacher)">Editar</button>
+          <button class="btn btn-danger"  (click)="delete(teacher)">Deletar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>

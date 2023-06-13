@@ -1,0 +1,11 @@
+{
+  "teachers": [
+    {
+      "id": 1,
+      "name": "Shrek",
+      "email": "shrekterceiroeumbomfilme@gmail.com",
+      "cpf": "85735093874",
+      "location": "Pantano do Shrek"
+    }
+  ]
+}

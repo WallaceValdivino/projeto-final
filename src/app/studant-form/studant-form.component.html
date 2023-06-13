@@ -1,0 +1,77 @@
+<div class="row">
+  <div class="display-7 text-center text-white">
+    <h3 class="text-white mb-4">Cadastro de anúncio</h3>
+    <form [formGroup]="formGroupStudant">
+
+      <div class="mb-3">
+        <label for="name" class="form-label">Nome</label>
+        <input type="text" formControlName="name" class="form-control" id="name" placeholder="Digite seu nome">
+        <div *ngIf="submitted && name.invalid">
+          <small class="text-danger">NOME INVALIDO!</small>
+        </div>
+
+      </div>
+
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" formControlName="email" class="form-control" id="email" placeholder="Digite seu email">
+        <div *ngIf="submitted && email.invalid">
+          <small class="text-danger">EMAIL INVALIDO!</small>
+        </div>
+      </div>
+
+
+
+      <div class="mb-3">
+        <label for="location" class="form-label">Endereço</label>
+        <input type="text" formControlName="location" class="form-control" id="location" placeholder="Digite seu endereço">
+        <div *ngIf="submitted && location.invalid">
+          <small class="text-danger">ENDEREÇO INVALIDO!</small>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="cpf" class="form-label">CPF</label>
+        <input type="text" formControlName="cpf" class="form-control" id="cpf" placeholder="Digite seu CPF">
+        <div *ngIf="submitted && cpf.invalid">
+          <small class="text-danger">CPF INVALIDO!</small>
+        </div>
+      </div>
+      <div>
+
+
+      <h6 class="form-label text-start">Status</h6>
+      <div class="form-check text-start">
+        <input class="form-check-input justify-left" type="radio" formControlName="status" value="Ativo" id="flexRadioDefault1"  />
+        <label class="form-check-label text-white" for="flexRadioDefault1">
+          Ativo
+        </label>
+      </div>
+      <div class="form-check text-start">
+        <input class="form-check-input" type="radio" formControlName="status" value="Desativo" id="flexRadioDefault2"
+          checked />
+        <label class="form-check-label text-white" for="flexRadioDefault2">
+          Desativo
+        </label>
+        <div *ngIf="submitted && status.invalid">
+          <small class="text-danger">STATUS INVALIDO!</small>
+        </div>
+      </div>
+
+
+      <div class="form-check text-start">
+        <input class="form-check-input" type="checkbox" formControlName="status" id="flexCheckDefault" />
+        <label class="form-check-label text-white" for="flexCheckDefault">
+          Passou de ano
+        </label>
+      </div>
+      <div>
+        <button class="btn btn-primary m-3" (click)="save()">Salvar</button>
+        <button class="btn btn-primary" (click)="clean()">Limpar</button>
+      </div>
+
+    </form>
+
+  </div>
+</div>
