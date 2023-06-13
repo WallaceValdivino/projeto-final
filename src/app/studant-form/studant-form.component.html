@@ -1,66 +1,80 @@
-
-
-  <div class="bg-dark mt-5 container  rounded-4 p-5">
-    <div class="row">
-  <div class="display-7 text-center text-white">
-<h3 class="mb-4">Cadastro de alunos</h3>
-    <form [formGroup]="formGroupStudant">
-
-      <div class="mb-3">
-        <label for="name" class="form-label">Nome</label>
-        <input type="text" formControlName="name" class="form-control" id="name" placeholder="Digite seu nome">
-        <div *ngIf="submitted && name.invalid">
-          <small class="text-danger">NOME INVALIDO!</small>
+<div class="bg-dark mt-5 container rounded-4 p-5">
+  <div class="row">
+    <div class="display-7 text-center text-white">
+      <h3 class="mb-4">Cadastro de alunos</h3>
+      <form [formGroup]="formGroupStudant">
+        <div class="mb-3">
+          <label for="name" class="form-label">Nome</label>
+          <input
+            type="text"
+            formControlName="name"
+            class="form-control"
+            id="name"
+            placeholder="Digite seu nome"
+          />
+          <div *ngIf="submitted && name.invalid">
+            <small class="text-danger">NOME INVALIDO!</small>
+          </div>
         </div>
 
-      </div>
-
-
-      <div class="mb-3">
-        <label for="email" class="form-label">Email</label>
-        <input type="email" formControlName="email" class="form-control" id="email" placeholder="Digite seu email">
-        <div *ngIf="submitted && email.invalid">
-          <small class="text-danger">EMAIL INVALIDO!</small>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            formControlName="email"
+            class="form-control"
+            id="email"
+            placeholder="Digite seu email"
+          />
+          <div *ngIf="submitted && email.invalid">
+            <small class="text-danger">EMAIL INVALIDO!</small>
+          </div>
         </div>
-      </div>
 
-
-
-      <div class="mb-3">
-        <label for="location" class="form-label">Endereço</label>
-        <input type="text" formControlName="location" class="form-control" id="location" placeholder="Digite seu endereço">
-        <div *ngIf="submitted && location.invalid">
-          <small class="text-danger">ENDEREÇO INVALIDO!</small>
+        <div class="mb-3">
+          <label for="location" class="form-label">Endereço</label>
+          <input
+            type="text"
+            formControlName="location"
+            class="form-control"
+            id="location"
+            placeholder="Digite seu endereço"
+          />
+          <div *ngIf="submitted && location.invalid">
+            <small class="text-danger">ENDEREÇO INVALIDO!</small>
+          </div>
         </div>
-      </div>
 
-      <div class="mb-3">
-        <label for="cpf" class="form-label">CPF</label>
-        <input type="text" formControlName="cpf" class="form-control" id="cpf" placeholder="Digite seu CPF">
-        <div *ngIf="submitted && cpf.invalid">
-          <small class="text-danger">CPF INVALIDO!</small>
+        <div class="mb-3">
+          <label for="cpf" class="form-label">CPF</label>
+          <input
+            type="text"
+            formControlName="cpf"
+            class="form-control"
+            id="cpf"
+            placeholder="Digite seu CPF"
+          />
+          <div *ngIf="submitted && cpf.invalid">
+            <small class="text-danger">CPF INVALIDO!</small>
+          </div>
         </div>
-      </div>
 
-
-
-      <div class="form-check text-start">
-        <input class="form-check-input" type="checkbox" formControlName="status" id="flexCheckDefault" />
-        <label class="form-check-label text-white" for="flexCheckDefault">
-          Passou de ano
-        </label>
-        <div *ngIf="submitted && status.invalid">
-          <small class="text-danger">SITUAÇÃO INVALIDA!</small>
+        <div class="form-check text-start">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            formControlName="status"
+            id="flexCheckDefault"
+          />
+          <label class="form-check-label text-white" for="flexCheckDefault">
+            Passou de ano
+          </label>
         </div>
-      </div>
-      <div>
-        <button class="btn btn-primary m-3"  (click)="save()">Salvar</button>
-        <button class="btn btn-primary" (click)="cancel()">Cancelar</button>
-      </div>
-
-    </form>
-
+        <div>
+          <button class="btn btn-primary m-3" (click)="save()">Salvar</button>
+          <button class="btn btn-primary" (click)="cancel()">Cancelar</button>
+        </div>
+      </form>
+    </div>
   </div>
-
-
 </div>

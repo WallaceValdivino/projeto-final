@@ -1,11 +1,8 @@
-export interface Studant{
-  id : number;
-  name : string;
+export interface Studant {
+  id: number;
+  name: string;
   email: string;
-
   cpf: string;
-  location : string;
-  status: string;
-
-
+  location: string;
+  status: boolean;
 }

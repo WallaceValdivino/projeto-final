@@ -1,9 +1,6 @@
 import { StudantService } from './../studant.service';
 import { Component, OnInit } from '@angular/core';
 import { Studant } from '../studant';
-
-import { Form, FormBuilder, FormGroup } from '@angular/forms';
-import { Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({

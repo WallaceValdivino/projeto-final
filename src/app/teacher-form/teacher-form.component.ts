@@ -9,11 +9,10 @@ import {
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Teacher } from '../teacher';
 
-
 @Component({
   selector: 'app-teacher-form',
   templateUrl: './teacher-form.component.html',
-  styleUrls: ['./teacher-form.component.css']
+  styleUrls: ['./teacher-form.component.css'],
 })
 export class TeacherFormComponent implements OnChanges {
   @Input()
@@ -26,7 +25,7 @@ export class TeacherFormComponent implements OnChanges {
   cleanEvent = new EventEmitter<void>();
   formGroupTeacher: FormGroup;
   submitted: boolean = false;
-  isEditing : boolean = false;
+  isEditing: boolean = false;
   constructor(private formBuilder: FormBuilder) {
     this.formGroupTeacher = formBuilder.group({
       id: [''],
@@ -52,7 +51,6 @@ export class TeacherFormComponent implements OnChanges {
     this.cleanEvent.emit();
     this.formGroupTeacher.reset();
     this.submitted = false;
-
   }
   get name(): any {
     return this.formGroupTeacher.get('name');

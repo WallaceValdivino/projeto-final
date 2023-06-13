@@ -5,8 +5,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { Teacher } from '../teacher';
 
-import { Form, FormBuilder, FormGroup } from '@angular/forms';
-import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-teachers',

@@ -1,20 +1,10 @@
-import {StudantService } from './../studant.service';
+import { StudantService } from './../studant.service';
 
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnChanges,
-  OnInit,
-  Output,
-  SimpleChanges,
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { Studant } from '../studant';
-
-import { ActivatedRoute, Route, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-studant-form',
@@ -23,7 +13,6 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
 
   styleUrls: ['./studant-form.component.css'],
 })
-
 export class StudantFormComponent implements OnInit {
   formGroupStudant: FormGroup;
 
@@ -50,7 +39,7 @@ export class StudantFormComponent implements OnInit {
 
       cpf: ['', [Validators.required]],
 
-      status: ['', [Validators.required]],
+      status: [''],
     });
   }
   ngOnInit(): void {
@@ -68,43 +57,41 @@ export class StudantFormComponent implements OnInit {
     });
   }
 
-
   save() {
     this.submitted = true;
     if (this.formGroupStudant.valid) {
-      if(this.isEditing){
+      if (this.isEditing) {
         this.StudantService.edit(this.formGroupStudant.value).subscribe({
-          next: () =>{
-            this.router.navigate(['studants'])
-          }
-        })
-      }
-      else{
+          next: () => {
+            this.router.navigate(['studants']);
+          },
+        });
+      } else {
         this.StudantService.save(this.formGroupStudant.value).subscribe({
           next: () => {
             this.router.navigate(['studants']);
-          }
-        })
+          },
+        });
       }
-    }}
-
-
-    cancel() {
-      this.router.navigate(['studants']);
-        }
-    get name(): any {
-      return this.formGroupStudant.get('name');
-    }
-    get email(): any {
-      return this.formGroupStudant.get('email');
-    }
-    get status(): any {
-      return this.formGroupStudant.get('status');
-    }
-    get location(): any {
-      return this.formGroupStudant.get('location');
-    }
-    get cpf(): any {
-      return this.formGroupStudant.get('location');
     }
   }
+
+  cancel() {
+    this.router.navigate(['studants']);
+  }
+  get name(): any {
+    return this.formGroupStudant.get('name');
+  }
+  get email(): any {
+    return this.formGroupStudant.get('email');
+  }
+  get status(): any {
+    return this.formGroupStudant.get('status');
+  }
+  get location(): any {
+    return this.formGroupStudant.get('location');
+  }
+  get cpf(): any {
+    return this.formGroupStudant.get('location');
+  }
+}
